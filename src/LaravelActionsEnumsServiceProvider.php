@@ -7,7 +7,7 @@ use Spatie\LaravelPackageTools\PackageServiceProvider;
 use RitaOrion\LaravelActionsEnums\Commands\ActionsCommand;
 use RitaOrion\LaravelActionsEnums\Commands\EnumsCommand;
 
-class LaravelActionsEnusServiceProvider extends PackageServiceProvider
+class LaravelActionsEnumsServiceProvider extends PackageServiceProvider
 {
     public function configurePackage(Package $package): void
     {
