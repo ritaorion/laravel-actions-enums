@@ -51,7 +51,7 @@ class EnumTemplate
         return "<?php\n
 namespace {$this->namespace};\n
 
-enum {$this->name}
+enum {$this->name}: string
 {
     case Example = 'example';
 }";
