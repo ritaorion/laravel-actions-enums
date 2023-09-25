@@ -2,6 +2,8 @@
 
 namespace RitaOrion\LaravelActionsEnums\Templates;
 
+use Spatie\StructureDiscoverer\Discover;
+
 class ActionTemplate
 {
     /**

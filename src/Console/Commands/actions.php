@@ -3,6 +3,7 @@
 namespace RitaOrion\LaravelActionsEnums\Commands;
 
 use Illuminate\Console\Command;
+use Spatie\StructureDiscoverer\Discover;
 use App\Templates\ActionTemplate;
 
 class actions extends Command
