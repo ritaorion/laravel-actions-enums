@@ -14,7 +14,7 @@
     },
     "autoload": {
         "psr-4": {
-            "Riritaorion\\LaravelActionsEnums\\": "src"
+            "Riritaorion\\LaravelActionsEnums\\": "app"
         }
     },
     "scripts": {
