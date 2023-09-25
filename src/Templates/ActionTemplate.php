@@ -55,7 +55,7 @@ class ActionTemplate
             $result = substr($ns, 0, $lastBackslashPos);
             return 'App\Actions\\' . $result;
         }
-        return 'App\Actions\\' . $ns;
+        return 'App\Actions';
     }
 
     /**

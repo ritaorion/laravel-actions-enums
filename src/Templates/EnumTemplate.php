@@ -46,12 +46,13 @@ class EnumTemplate
     private function createNamespace(string $globalName)
     {
         $ns = str_replace('/', '\\', $globalName);
+//        $root = strpos($ns, '\\') === false;
         $lastBackslashPos = strrpos($ns, '\\');
         if ($lastBackslashPos !== false) {
             $result = substr($ns, 0, $lastBackslashPos);
             return 'App\Enums\\' . $result;
         }
-        return 'App\Actions\\' . $ns;
+        return 'App\Enums';
     }
 
     /**
