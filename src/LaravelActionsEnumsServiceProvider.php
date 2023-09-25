@@ -4,8 +4,8 @@ namespace RitaOrion\LaravelActionsEnums;
 
 use Spatie\LaravelPackageTools\Package;
 use Spatie\LaravelPackageTools\PackageServiceProvider;
-use RitaOrion\LaravelActionsEnums\app\Commands\actions;
-use RitaOrion\LaravelActionsEnums\app\Commands\enums;
+use RitaOrion\LaravelActionsEnums\Commands\ActionsCommand;
+use RitaOrion\LaravelActionsEnums\Commands\EnumsCommand;
 
 class LaravelActionsEnusServiceProvider extends PackageServiceProvider
 {
@@ -18,7 +18,10 @@ class LaravelActionsEnusServiceProvider extends PackageServiceProvider
          */
         $package
             ->name('laravel-actions-enums')
-            ->hasCommand(actions::class)
-            ->hasCommand(enums::class);
+            ->hasCommands([
+                ActionsCommand::class,
+                EnumsCommand::class
+            ]);
+        
     }
 }
