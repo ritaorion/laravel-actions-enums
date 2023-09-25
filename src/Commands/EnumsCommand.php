@@ -13,7 +13,7 @@ class EnumsCommand extends Command
      *
      * @var string
      */
-    protected $signature = 'enums:create {name}';
+    protected $signature = 'enums:create {name} {--case=*}';
 
     /**
      * The console command description.
@@ -28,6 +28,8 @@ class EnumsCommand extends Command
     public function handle()
     {
         $name = $this->argument('name');
+        $gn = $this->argument('name');
+        $values = $this->option('case');
         $rootPath = app_path('Enums');
 
         if (!is_dir($rootPath)) {
@@ -45,8 +47,14 @@ class EnumsCommand extends Command
         }
 
         $file = fopen("$rootPath/$name.php", 'w');
-        $template = new EnumTemplate($name, $name);
-        fwrite($file, $template->getTemplate());
+        $template = new EnumTemplate($name, $gn, $values);
+        $write = fwrite($file, $template->getTemplate());
         fclose($file);
+        if($write) {
+            $message = "Enum $gn created successfully.";
+            $this->info($message);
+        } else {
+            $this->error('There was an error creating the Enum.');
+        }
     }
 }

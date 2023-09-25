@@ -13,7 +13,7 @@ class ActionsCommand extends Command
      *
      * @var string
      */
-    protected $signature = 'actions:create {name}';
+    protected $signature = 'actions:create {name} {--model=}';
 
     /**
      * The console command description.
@@ -25,9 +25,18 @@ class ActionsCommand extends Command
     /**
      * Execute the console command.
      */
-    public function handle()
+    public function handle(): void
     {
         $name = $this->argument('name');
+        $gn = $this->argument('name');
+        $model = $this->option('model');
+        if($model) {
+            if (!class_exists("App\\Models\\" . $model)) {
+                $this->error('The model you provided does not exist.');
+                return;
+            }
+        }
+
         $rootPath = app_path('Actions');
 
         if (!is_dir($rootPath)) {
@@ -45,8 +54,14 @@ class ActionsCommand extends Command
         }
 
         $file = fopen("$rootPath/$name.php", 'w');
-        $template = new ActionTemplate($name, $name);
-        fwrite($file, $template->getTemplate());
+        $template = new ActionTemplate($name, $gn, $model);
+        $write = fwrite($file, $template->getTemplate());
         fclose($file);
+        if($write) {
+            $message = "Action $gn created successfully.";
+            $this->info($message);
+        } else {
+            $this->error('Something went horribly wrong. Check your syntax and try again.');
+        }
     }
 }
