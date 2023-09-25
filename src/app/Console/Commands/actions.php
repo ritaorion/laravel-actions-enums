@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Console\Commands;
+namespace RitaOrion\LaravelActionsEnums\Commands;
 
 use Illuminate\Console\Command;
 use App\Templates\ActionTemplate;

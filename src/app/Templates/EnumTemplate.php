@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Templates;
+namespace RitaOrion\LaravelActionsEnums\Templates;
 
 class EnumTemplate
 {
