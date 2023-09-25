@@ -34,8 +34,18 @@ class EnumsCommand extends Command
             mkdir($rootPath);
         }
 
+        if (strpos($name, '/') !== false) {
+            $nameParts = explode('/', $name);
+            $name = array_pop($nameParts);
+            $rootPath .= '/' . implode('/', $nameParts);
+
+            if (!is_dir($rootPath)) {
+                mkdir($rootPath, 0777, true);
+            }
+        }
+
         $file = fopen("$rootPath/$name.php", 'w');
-        $template = new EnumTemplate($name);
+        $template = new EnumTemplate($name, $name);
         fwrite($file, $template->getTemplate());
         fclose($file);
     }
