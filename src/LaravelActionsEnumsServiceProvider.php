@@ -18,7 +18,7 @@ class LaravelActionsEnusServiceProvider extends PackageServiceProvider
          */
         $package
             ->name('laravel-actions-enums')
-            ->hasCommand(actions::class);
+            ->hasCommand(actions::class)
             ->hasCommand(enums::class);
     }
 }
