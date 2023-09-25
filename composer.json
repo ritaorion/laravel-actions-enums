@@ -1,0 +1,20 @@
+{
+    "name": "riritaorion/laravel-actions-enums",
+    "description": "This package provides Artisan CLI Support to create Scaffolding for Actions and Enum classes in Laravel",
+    "require": {
+        "php": ">=8.1",
+        "laravel/framework": "^10.10"
+    },
+    "license": "MIT",
+    "autoload": {
+        "psr-4": {
+            "Riritaorion\\LaravelActionsEnums\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Andrew Godby",
+            "email": "andrewmgodby@gmail.com"
+        }
+    ]
+}
