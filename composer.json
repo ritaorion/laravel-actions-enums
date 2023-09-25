@@ -29,13 +29,6 @@
     "extra": {
         "laravel": {
             "providers": [
-                "Riritaorion\\LaravelActionsEnums\\"
-            ]
-        }
-    },
-    "extra": {
-        "laravel": {
-            "providers": [
                 "Riritaorion\\LaravelActionsEnums\\LaravelActionsEnumsServiceProvider"
             ],
             "aliases": {
