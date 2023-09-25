@@ -14,7 +14,7 @@
     },
     "autoload": {
         "psr-4": {
-            "Riritaorion\\LaravelActionsEnums\\": "app"
+            "Ritaorion\\LaravelActionsEnums\\": "src/"
         }
     },
     "scripts": {
@@ -29,10 +29,10 @@
     "extra": {
         "laravel": {
             "providers": [
-                "Riritaorion\\LaravelActionsEnums\\LaravelActionsEnumsServiceProvider"
+                "Ritaorion\\LaravelActionsEnums\\LaravelActionsEnumsServiceProvider"
             ],
             "aliases": {
-                "LaravelActionsEnums": "Riritaorion\\LaravelActionsEnums\\Facades\\LaravelActionsEnums"
+                "LaravelActionsEnums": "Ritaorion\\LaravelActionsEnums\\Facades\\LaravelActionsEnums"
             }
         }
     },

@@ -1,6 +1,6 @@
 <?php
 
-namespace RitaOrion\LaravelActionsEnums\Templates;
+namespace Ritaorion\LaravelActionsEnums\Templates;
 
 use Spatie\StructureDiscoverer\Discover;
 

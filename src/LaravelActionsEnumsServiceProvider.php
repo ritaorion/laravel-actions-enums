@@ -1,11 +1,11 @@
 <?php
 
-namespace RitaOrion\LaravelActionsEnums;
+namespace Ritaorion\LaravelActionsEnums;
 
 use Spatie\LaravelPackageTools\Package;
 use Spatie\LaravelPackageTools\PackageServiceProvider;
-use RitaOrion\LaravelActionsEnums\Commands\ActionsCommand;
-use RitaOrion\LaravelActionsEnums\Commands\EnumsCommand;
+use Ritaorion\LaravelActionsEnums\Commands\ActionsCommand;
+use Ritaorion\LaravelActionsEnums\Commands\EnumsCommand;
 
 class LaravelActionsEnumsServiceProvider extends PackageServiceProvider
 {
@@ -22,6 +22,6 @@ class LaravelActionsEnumsServiceProvider extends PackageServiceProvider
                 ActionsCommand::class,
                 EnumsCommand::class
             ]);
-        
+
     }
 }

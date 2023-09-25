@@ -1,6 +1,6 @@
 <?php
 
-namespace RitaOrion\LaravelActionsEnums;
+namespace Ritaorion\LaravelActionsEnums;
 
 class LaravelActionsEnums
 {

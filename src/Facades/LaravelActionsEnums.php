@@ -1,6 +1,6 @@
 <?php
 
-namespace RitaOrion\LaravelActionsEnums\Facades;
+namespace Ritaorion\LaravelActionsEnums\Facades;
 
 use Illuminate\Support\Facades\Facade;
 
@@ -9,6 +9,6 @@ class LaravelActionsEnums extends Facade
 {
     protected static function getFacadeAccessor()
     {
-        return RitaOrion\LaravelActionsEnums\LaravelActionsEnums::class;
+        return Ritaorion\LaravelActionsEnums\LaravelActionsEnums::class;
     }
 }

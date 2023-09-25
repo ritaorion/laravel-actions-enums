@@ -1,10 +1,10 @@
 <?php
 
-namespace RitaOrion\LaravelActionsEnums\Commands;
+namespace Ritaorion\LaravelActionsEnums\Commands;
 
 use Illuminate\Console\Command;
 use Spatie\StructureDiscoverer\Discover;
-use App\Templates\EnumTemplate;
+use Ritaorion\LaravelActionsEnums\Templates\EnumTemplate;
 
 class EnumsCommand extends Command
 {
