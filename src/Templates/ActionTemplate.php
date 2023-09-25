@@ -78,7 +78,7 @@ class ActionTemplate
         return "<?php\n
 namespace {$this->namespace};\n
 
-class {$this->name}
+class {$this->className}
 {
     public function create(\$input): void
     {

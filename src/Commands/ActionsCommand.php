@@ -31,6 +31,7 @@ class ActionsCommand extends Command
         $gn = $this->argument('name');
         $model = $this->option('model');
         if($model) {
+            $fn = $model . 'Actions' . '.php';
             if (!class_exists("App\\Models\\" . $model)) {
                 $this->error('The model you provided does not exist.');
                 return;
@@ -52,8 +53,10 @@ class ActionsCommand extends Command
                 mkdir($rootPath, 0777, true);
             }
         }
-
-        $file = fopen("$rootPath/$name.php", 'w');
+        if(!$model) {
+            $fn = $name . 'Actions' . '.php';
+        }
+        $file = fopen("$rootPath/$fn", 'w');
         $template = new ActionTemplate($name, $gn, $model);
         $write = fwrite($file, $template->getTemplate());
         fclose($file);
