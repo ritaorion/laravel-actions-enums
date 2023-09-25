@@ -50,6 +50,11 @@ class ActionTemplate
     private function createNamespace(string $globalName)
     {
         $ns = str_replace('/', '\\', $globalName);
+        $lastBackslashPos = strrpos($ns, '\\');
+        if ($lastBackslashPos !== false) {
+            $result = substr($ns, 0, $lastBackslashPos);
+            return 'App\Actions\\' . $result;
+        }
         return 'App\Actions\\' . $ns;
     }
 

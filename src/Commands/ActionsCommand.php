@@ -13,7 +13,7 @@ class ActionsCommand extends Command
      *
      * @var string
      */
-    protected $signature = 'actions:create {name} {--model=}';
+    protected $signature = 'make:action {name} {--model=}';
 
     /**
      * The console command description.

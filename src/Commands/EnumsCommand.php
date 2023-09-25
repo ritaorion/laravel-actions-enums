@@ -13,7 +13,7 @@ class EnumsCommand extends Command
      *
      * @var string
      */
-    protected $signature = 'enums:create {name} {--case=*}';
+    protected $signature = 'make:enum {name} {--case=*}';
 
     /**
      * The console command description.

@@ -1,9 +1,6 @@
 # Laravel Actions & Enus
 This package provides Artisan CLI Support to create Scaffolding for Actions and Enum classes in Laravel
 
-## Installation
-`composer require ritaorion/laravel-actions-enums`
-
 ## Basic Usage
 - `php artisan actions:create {$name}`
 - `php artisan enums:create {$name`

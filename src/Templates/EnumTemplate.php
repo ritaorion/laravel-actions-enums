@@ -46,7 +46,12 @@ class EnumTemplate
     private function createNamespace(string $globalName)
     {
         $ns = str_replace('/', '\\', $globalName);
-        return 'App\Enums\\' . $ns;
+        $lastBackslashPos = strrpos($ns, '\\');
+        if ($lastBackslashPos !== false) {
+            $result = substr($ns, 0, $lastBackslashPos);
+            return 'App\Enums\\' . $result;
+        }
+        return 'App\Actions\\' . $ns;
     }
 
     /**
@@ -74,6 +79,16 @@ namespace {$this->namespace};\n
 enum {$this->name}: string
 {
     " . $this->getValues() . "
+    /**
+     * @throws \Exception
+     */
+    public function getLabel(): string
+    {
+        return match (\$this->value) {
+            " . $this->getMatches() . "
+            default => throw new \Exception('Unexpected match value'),
+        };
+    }
 }";
     }
 
@@ -81,8 +96,27 @@ enum {$this->name}: string
     {
         $values = '';
         foreach($this->values as $value) {
-            $values .= "case $value = '$value';\n    ";
+            if (strpos($value, ' ') !== false) {
+                $pascal_value = str_replace(' ', '', ucwords($value));
+                $values .= "case $pascal_value = '$value';\n    ";
+            } else {
+                $values .= "case $value = '$value';\n    ";
+            }
         }
         return $values;
+    }
+
+    public function getMatches(): string
+    {
+        $matches = '';
+        foreach($this->values as $value) {
+            if (strpos($value, ' ') !== false) {
+                $pascal_value = str_replace(' ', '', ucwords($value));
+                $matches .= "self::$pascal_value => '$value',\n            ";
+            } else {
+                $matches .= "self::$value => '$value',\n            ";
+            }
+        }
+        return $matches;
     }
 }
